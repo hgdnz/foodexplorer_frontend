@@ -61,8 +61,6 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   max-width: 100vw;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
 
   z-index: 1;
 
@@ -89,10 +87,6 @@ export const Content = styled.div`
 
   swiper-container {
     height: 29.2rem;
-  }
-
-  swiper-scrollbar-drag {
-    margin: 0;
   }
 
   swiper-slide {
@@ -152,7 +146,7 @@ export const Content = styled.div`
     height: 100%;
 
     section {
-      max-width: 100vw;
+      max-width: 92vw;
       margin: 0 auto;
     }
 
