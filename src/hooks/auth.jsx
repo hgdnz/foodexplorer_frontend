@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 import { api } from "../services/api";
-import jwtDecode from "jwt-decode";
 
 export const AuthContext = createContext({});
 
@@ -15,24 +14,7 @@ function AuthProvider({ children }) {
     setData({});
   }
 
-  function isUserAuthenticated() {
-    const user = localStorage.getItem("@foodexplorer:user");
-
-    if (!user) {
-      return false;
-    }
-
-    const token = localStorage.getItem("@foodexplorer:token");
-    const tokenExpiration = jwtDecode(token).exp;
-    const currentTime = Math.floor(Date.now() / 1000);
-
-    if (tokenExpiration < currentTime) {
-      return false;
-    }
-
-    return true;
-  }  
-
+   
   async function signIn({ email, password }) {
     try {
       const response = await api.post("/sessions", { email, password });
@@ -71,7 +53,6 @@ function AuthProvider({ children }) {
       value={{
         signIn,
         signOut,
-        isUserAuthenticated,
         user: data.user,
       }}
     >
