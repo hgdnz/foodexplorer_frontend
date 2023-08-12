@@ -85,7 +85,7 @@ Before you begin, you will need to have the following tools installed on your ma
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:hgdnz/foodexplorer_backend.git
+$ git clone git@github.com:hgdnz/foodexplorer_frontend.git
 
 # Access the project folder in your terminal
 $ cd foodexplorer_backend
